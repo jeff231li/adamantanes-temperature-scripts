@@ -18,9 +18,9 @@ Follow these steps to install pAPRika version 1.1.0 straight from conda (change 
 3. Install paprika v1.1.0 `conda install -c conda-forge paprika=1.1.0`
 
 ### Installing other dependencies
-One of the main libraries I used for analysis is MDAnalysis and it is not installed by default with the `conda` command above. To install MDAnalysis run the following command
-```Python
-conda install -c conda-forge mdanalysis
+I've prepared some of the script to use Jupyter notebook/lab, so we will need to install this in conda (either the notebook or lab versions will work). The simulations use OpenMM version 7.5.1 and MDAnalysis. To install these libraries run the following in the `paprika` conda environment
+```bash
+conda install -c conda-forge jupyterlab mdanalysis openmm=7.5.1
 ```
 
 Optionally, I provide a parallel version of the analysis script for processing long trajectories. For running the parallel code we need the MPI4Py.

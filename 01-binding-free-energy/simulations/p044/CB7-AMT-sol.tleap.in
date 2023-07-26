@@ -1,0 +1,25 @@
+source leaprc.gaff2
+source leaprc.water.tip3p
+loadamberparams frcmod.tip3p
+loadamberparams ../../../structure-files/guest.frcmod
+loadamberparams ../../../structure-files/host.frcmod
+loadamberparams ../../build_folder/dummy.frcmod
+AMT = loadmol2 ../../../structure-files/1-AdOH.am1bcc.gaff2.mol2
+CB7 = loadmol2 ../../../structure-files/cb7.am1bcc.gaff2.mol2
+DM1 = loadmol2 ../../build_folder/dm1.mol2
+DM2 = loadmol2 ../../build_folder/dm2.mol2
+DM3 = loadmol2 ../../build_folder/dm3.mol2
+complex = loadpdb CB7-AMT.pdb
+
+solvatebox complex TIP3PBOX {10.0 10.0 14.7}
+addionsrand complex Na+ 0
+addionsrand complex Cl- 0
+remove complex complex.2506
+remove complex complex.2507
+remove complex complex.2508
+remove complex complex.2509
+remove complex complex.2510
+savepdb complex CB7-AMT-sol.pdb
+saveamberparm complex CB7-AMT-sol.prmtop CB7-AMT-sol.rst7
+desc complex
+quit

@@ -1,0 +1,12 @@
+source leaprc.gaff2
+loadamberparams ../../structure-files/guest.frcmod
+loadamberparams ../../structure-files/host.frcmod
+AMT = loadmol2 ../../structure-files/1-AdOH.am1bcc.gaff2.mol2
+CB7 = loadmol2 ../../structure-files/cb7.am1bcc.gaff2.mol2
+model = loadpdb ../../structure-files/cb7-1-AdOH.pdb
+
+# Skipping solvation ...
+savepdb model vac.pdb
+saveamberparm model vac.prmtop vac.rst7
+desc model
+quit

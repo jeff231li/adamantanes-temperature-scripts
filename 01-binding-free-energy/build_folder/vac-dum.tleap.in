@@ -1,0 +1,16 @@
+source leaprc.gaff2
+loadamberparams ../../structure-files/guest.frcmod
+loadamberparams ../../structure-files/host.frcmod
+loadamberparams dummy.frcmod
+CB7 = loadmol2 ../../structure-files/cb7.am1bcc.gaff2.mol2
+AMT = loadmol2 ../../structure-files/1-AdOH.am1bcc.gaff2.mol2
+DM1 = loadmol2 dm1.mol2
+DM2 = loadmol2 dm2.mol2
+DM3 = loadmol2 dm3.mol2
+complex = loadpdb aligned_with_dummy.pdb
+
+# Skipping solvation ...
+savepdb complex vac-dum.pdb
+saveamberparm complex vac-dum.prmtop vac-dum.rst7
+desc complex
+quit
