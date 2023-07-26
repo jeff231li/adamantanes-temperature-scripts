@@ -18,7 +18,7 @@ With the binding enthalpy simulations, we perform a number of analysis as showca
 ## Binding Enthalpy
 The binding enthalpy is simply the change in potential energy between the bound and unbound states of the host-guest complex in water.
 
-$$\Delta H_{b} = \langle U_{bound} \rangle - \langle U_{pulled} \rangle$$
+$$\Delta H_{b} = \langle U_{bound} \rangle - \langle U_{unbound} \rangle$$
 
 
 ## Decomposition of binding enthalpy -- force field terms
