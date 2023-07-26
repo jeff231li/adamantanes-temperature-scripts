@@ -1,2 +1,3 @@
-# adamantanes_temperature_paper
-Repository containing setup and analysis scripts used in the paper studying the temperature-dependence of adamantanes host-guest binding.
+# Temperature-dependence of host-guest binding thermodynamics
+This repository contains scripts (mostly Python) used to configure and perform analysis in the paper "The Temperature-Dependence of Host-Guest Binding Thermodynamics: Experimental and Simulation Studies".
+
