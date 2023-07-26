@@ -32,7 +32,7 @@ dt_prod = 2.0 * unit.femtoseconds
 
 time_therm = 100 * unit.picoseconds
 time_equil = 2.5 * unit.nanoseconds
-time_prod = 30.0 * unit.nanoseconds
+time_prod = 1000.0 * unit.nanoseconds
 time_output = 10 * unit.picoseconds
 
 therm_steps = int(time_therm / dt_therm) + 1
