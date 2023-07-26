@@ -18,7 +18,7 @@ With the binding enthalpy simulations, we perform a number of analysis as showca
 ## Binding Enthalpy
 The binding enthalpy is simply the change in potential energy between the bound and unbound states of the host-guest complex in water.
 
-$$\Delta H_{b} = \langle U_{bound} \rangle - \langle U_{pull} \rangle$$
+$$\Delta H_{b} = \langle U_{bound} \rangle - \langle U_{pulled} \rangle$$
 
 
 ## Decomposition of binding enthalpy -- force field terms
@@ -33,10 +33,10 @@ In this case, the total binding enthalpy is decomposed to the sum of force field
 In the second decomposition of the binding enthalpy, we split the interactions involving Host-Guest and Desolvation
 
 * $\Delta H_{H-G}$ - change upon binding of Host-Guest interactions only (solute-solute)
-* $\Delta H_{desolv} - change upon binding of interactions involving the solvent (solute-water and water-water)
+* $\Delta H_{desolv}$ - change upon binding of interactions involving the solvent (solute-water and water-water)
 
-## Change in H-bonds upon binding
+## Change in the number of H-bonds upon binding
 
 
-## Number of water molecules in cavity
-We also estimated the change in the number of water molecules inside the host cavity upond binding
+## Change in the number of water molecules in cavity
+We also estimated the change in the number of water molecules inside the host cavity upon binding

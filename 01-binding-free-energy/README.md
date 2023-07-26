@@ -1,4 +1,4 @@
-# Standard APR calculation to estimate H-G binding $$\Delta G_{b}$$
+# Standard APR calculation to estimate H-G binding $\Delta G_{b}$
 
 In this step, we perform the binding free energy calculation with the attach-pull-release (APR) method.
 
