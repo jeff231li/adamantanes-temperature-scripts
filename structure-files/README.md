@@ -16,3 +16,5 @@ parmchk2 -f mol2 -i cb7.am1bcc.gaff2.mol2 -s gaff2 -o host.frcmod
 
 ## Combining host and guest molecules
 I have already prepared the PDB file ([cb7-1-AdOH.pdb](cb7-1-AdOH.pdb)) of the host and guest molecules in the bound state. For new complexes, docking software may need to be used to generate the bound complex.
+
+![](hg_complex.jpg)
