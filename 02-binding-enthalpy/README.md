@@ -13,13 +13,18 @@ With the binding enthalpy simulations, we perform a number of analysis as showca
 2) Decomposition of binding enthalpy in terms of force field terms
 3) Decomposition of binding enthalpy in terms of Host-Guest interaction and Desolvation energy.
 4) Change in number of H-bonds in the system upon binding.
-5) Change in water molecules upon binding inside the cavity upon binding..
 
 ## Binding Enthalpy
 The binding enthalpy is simply the change in potential energy between the bound and unbound states of the host-guest complex in water.
 
 $$\Delta H_{b} = \langle U_{bound} \rangle - \langle U_{unbound} \rangle$$
 
+The energy $\langle U \rangle$ is estimated by recalculating the total potential energy without the restraint potentials. There are two files available in [analysis/enthalpy](analysis/enthalpy) that is used to estimate the enthalpy. To recalculate the potential energy run the Python script
+```bash
+mpirun -np 4 python calculate_total_potential_energy-MPI.py a000
+mpirun -np 4 python calculate_total_potential_energy-MPI.py r014
+```
+The Jupyter Notebook [estimate_enthalpy.ipynb](analysis/enthalpy/estimate_enthalpy.ipynb) post-processes the raw potential energy and estimates the binding enthalpy with the SEM.
 
 ## Decomposition of binding enthalpy -- force field terms
 In this case, the total binding enthalpy is decomposed to the sum of force field terms. This is possible because we used an additive force field. We decomposed the binding enthalpy to
@@ -28,15 +33,29 @@ In this case, the total binding enthalpy is decomposed to the sum of force field
 * $\Delta H_{LJ}$ - Lennard-Jones interactions
 * $\Delta H_{elec}$ - electrostatic interactions
 
+The scripts to estimate the enthalpy based on the FF terms above are available at [analysis/enthalpy-force-field-decomposition](analysis/enthalpy-force-field-decomposition).
 
-## Decomposition of binding enthalpy -- Host-Guest and Desolvation
+```bash
+mpirun -np 4 python calculate_potential_ff_decomposition-MPI.py a000
+mpirun -np 4 python calculate_potential_ff_decomposition-MPI.py r014
+```
+The Jupyter Notebook [enthalpy_ff_decomposition.ipynb](analysis/enthalpy-force-field-decomposition/enthalpy_ff_decomposition.ipynb) post-processes the raw individual potential energy and estimates the binding enthalpy with the SEM for each force field components.
+
+## Decomposition of binding enthalpy -- $\Delta H_{H-G}$ and $\Delta H_{Desolv}$
 In the second decomposition of the binding enthalpy, we split the interactions involving host-guest interactions and desolvation. The decomposition follows the procedure from [Tang and Chang](https://doi.org/10.1021/acs.jctc.7b00899)
 
 * $\Delta H_{H-G}$ - change upon binding of Host-Guest interactions only (solute-solute)
 * $\Delta H_{desolv}$ - change upon binding of interactions involving the solvent (solute-water and water-water)
+* 
+The scripts to decompose the enthalpy for host-guest and desolvation are located int [analysis/enthalpy-decomposition](analysis/enthalpy-decomposition).
+
+```bash
+mpirun -np 4 python calculate_potential_decomposition-MPI.py a000
+mpirun -np 4 python calculate_potential_decomposition-MPI.py r014
+```
+
+The Jupyter Notebook [enthalpy_decomposition.ipynb](analysis/enthalpy-decomposition/enthalpy_decomposition.ipynb) post-processes the raw individual potential energy and estimates the binding enthalpy with the SEM for the host-guest and desolvation terms.
+
 
 ## Change in the number of H-bonds upon binding
-A hydrogen bond is considered when the donor-acceptor-distance is less than 3.0 Å and the donor-hydrogen-acceptor angle is less than 150°. We count the number of H-bonds using the [MDAnalysis](https://github.com/MDAnalysis/mdanalysis) Python package.
-
-## Change in the number of water molecules in cavity
-We also estimated the change in the number of water molecules inside the host cavity upon binding
+A hydrogen bond is considered when the donor-acceptor-distance is less than 3.0 Å and the donor-hydrogen-acceptor angle is less than 150°. We count the number of H-bonds using the [MDAnalysis](https://github.com/MDAnalysis/mdanalysis) Python package. The analysis is summarized in the Jupyter Notebook [hbond_analysis.ipynb](analysis/hydrogen-bonds/hbond_analysis.ipynb).
