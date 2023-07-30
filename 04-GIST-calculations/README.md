@@ -15,7 +15,7 @@ where
 * $n_{i}$ -- average number of water molecules voxel $i$
 * $n_{i,bulk}$ -- average number of water molecules in a pure bulk environment in voxel $i$
 
-The water-water contribution is referenced with the bulk in order to make voxels far away from the solutes have zero values. To simplify things, I calculate the reference value by estimating the average energy in each voxel for a water box simulation at two temperatures. The average $E_{bulk}^{ww}$ for 298.15 K and 328.15 K are 9.562 kcal/mol and 9.173 kcal/mol, respectively. The water densities at these two temperatures are 0.0334 $\unicode{x212B}^{-3}$ and 0.0320 $\unicode{x212B}^{-3}$, respectively.
+The water-water contribution is referenced with the bulk in order to make voxels far away from the solutes have zero values. To simplify things, I calculate the reference value by estimating the average energy in each voxel for a water box simulation at two temperatures. The average $E_{bulk}^{ww}$ for 298.15 K and 328.15 K are 9.562 kcal/mol and 9.173 kcal/mol, respectively. The water densities at these two temperatures are 0.0334 $\unicode{x212B}^{-3}$ and 0.0320 $\unicode{x212B}^{-3}$, respectively. The simulation and analysis scripts for pure water is available in [04-pure-water-box](04-pure-water-box)
 
 ## Heat Capacity Grid from GIST
 The heat capacity in each voxel $C_{p,i}$ is estimated by taking the difference in energy at two temperatures divided by the difference in temperature:
@@ -26,10 +26,10 @@ The change in heat capacity upon binding $\Delta C_{p,i}$ is then obtained by su
 
 $$\Delta C_{p,i} = C_{p,i}^{complex} - C_{p,i}^{host} - C_{p,i}^{guest}$$
 
-This folder contains three folders corresponding to the simulations and analysis for the three components above. The heat capacity for each system is estimated with the script [calculate_heat_capacity-GIST.sh](calculate_heat_capacity-GIST.sh), which uses [GISTPP](https://github.com/KurtzmanLab/Gist-Post-Processing/tree/master) to perform the GRID operations above. An alternative [Python script](calculate_heat_capacity-GIST.py) is provided that does the same thing but with the `gridData` module. To use the Python script you will need to install it first using
+This folder contains three folders corresponding to the simulations and analysis for the three components above. The heat capacity for each system is estimated with the script [calculate_heat_capacity-GIST.sh](calculate_heat_capacity-GIST.sh), which uses [GISTPP](https://github.com/KurtzmanLab/Gist-Post-Processing/tree/master) to perform the GRID operations above. 
+
+## Integrating Heat Capacity Grid
+Finally, we want to integrate the heat capacity GIST voxels to get a numerical value. This is done with the Python script with the `gridData` module. To use the Python scripts with `gridData` format you will need to install this first
 ```bash
 pip install gridDataFormats
 ```
-
-## Integrating Heat Capacity Grid
-Finally, we want to integrate the heat capacity GIST voxels to get a numerical value. This is done with the Python script with the `gridData` module.
