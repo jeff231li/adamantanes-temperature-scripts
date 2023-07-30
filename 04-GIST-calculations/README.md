@@ -24,6 +24,9 @@ The change in heat capacity upon binding $\Delta C_{p,i}$ is then obtained by su
 
 $$\Delta C_{p,i} = C_{p,i}^{complex} - C_{p,i}^{host} - C_{p,i}^{guest}$$
 
-This folder contains three folders corresponding to the simulations and analysis for the three components above. The heat capacity for each system is estimated with the script [calculate_heat_capacity-GIST.sh](calculate_heat_capacity-GIST.sh), which uses [GISTPP](https://github.com/KurtzmanLab/Gist-Post-Processing/tree/master) to perform the GRID operations above. 
+This folder contains three folders corresponding to the simulations and analysis for the three components above. The heat capacity for each system is estimated with the script [calculate_heat_capacity-GIST.sh](calculate_heat_capacity-GIST.sh), which uses [GISTPP](https://github.com/KurtzmanLab/Gist-Post-Processing/tree/master) to perform the GRID operations above. An alternative [Python script](calculate_heat_capacity-GIST.py) is provided that does the same thing but with the `gridData` module. To use the Python script you will need to install it first using
+```bash
+pip install gridDataFormats
+```
 
 Finally, we want to integrate the heat capacity GIST voxels to get a numerical value. This is done with the script.
