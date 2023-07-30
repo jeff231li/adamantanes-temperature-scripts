@@ -1,5 +1,6 @@
 # Heat Capacity $\Delta C_{p,b}$ from GIST analysis
 
+## Total Solvation Energy Grid from GIST
 This folder contains the scripts to estimate the heat capacity $\Delta C_{p,b}$ from GIST analysis. Briefly, the solvation free energy in GIST is given by
 
 $$\Delta A_{i} = \Delta E_{i} - T\Delta S_{i}$$
@@ -16,6 +17,7 @@ where
 
 The water-water contribution is referenced with the bulk in order to make voxels far away from the solutes have zero values. To simplify things, I calculate the reference value by estimating the average energy in each voxel for a water box simulation at two temperatures. The average $E_{bulk}^{ww}$ for 298.15 K and 328.15 K are 9.562 kcal/mol and 9.173 kcal/mol, respectively. The water densities at these two temperatures are 0.0334 $\unicode{x212B}^{-3}$ and 0.0320 $\unicode{x212B}^{-3}$, respectively.
 
+## Heat Capacity Grid from GIST
 The heat capacity in each voxel $C_{p,i}$ is estimated by taking the difference in energy at two temperatures divided by the difference in temperature:
 
 $$C_{p,i} = \frac{\Delta E_{i}^{total}(T_2)-\Delta E_{i}^{total}(T_1)}{T_2 - T_1}$$
@@ -29,4 +31,5 @@ This folder contains three folders corresponding to the simulations and analysis
 pip install gridDataFormats
 ```
 
-Finally, we want to integrate the heat capacity GIST voxels to get a numerical value. This is done with the script.
+## Integrating Heat Capacity Grid
+Finally, we want to integrate the heat capacity GIST voxels to get a numerical value. This is done with the Python script with the `gridData` module.
