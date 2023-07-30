@@ -29,7 +29,8 @@ $$\Delta C_{p,i} = C_{p,i}^{complex} - C_{p,i}^{host} - C_{p,i}^{guest}$$
 This folder contains three folders corresponding to the simulations and analysis for the three components above. The heat capacity for each system is estimated with the script [calculate_heat_capacity-GIST.sh](calculate_heat_capacity-GIST.sh), which uses [GISTPP](https://github.com/KurtzmanLab/Gist-Post-Processing/tree/master) to perform the GRID operations above. 
 
 ## Integrating Heat Capacity Grid
-Finally, we want to integrate the heat capacity GIST voxels to get a numerical value. This is done with the Python script with the `gridData` module. To use the Python scripts with `gridData` format you will need to install this first
+Finally, we want to estimate the change in the heat capacity upon binding and integrate the GIST voxels to obtain some numerical values. This is done with the Python script [estimate_change_in_heat_capacity.py](estimate_change_in_heat_capacity.py) that the `gridData` module, which you will need to install this first using the command
 ```bash
 pip install gridDataFormats
 ```
+The Python script will subtract the free host and guest heat capacity from the bound complex state.
