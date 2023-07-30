@@ -1,8 +1,7 @@
 # Temperature-dependence of host-guest binding thermodynamics
-This repository contains scripts (mostly Python) used to configure and perform analysis in the paper "The Temperature-Dependence of Host-Guest Binding Thermodynamics: Experimental and Simulation Studies".
 
-# Introduction
-
+## Introduction
+This repository contains most of the scripts used in the "Simulation Analysis" from the paper "The Temperature-Dependence of Host-Guest Binding Thermodynamics: Experimental and Simulation Studies". The files provided are either Python or bash scripts, that performs the different analysis. 
 
 # Dependencies
 The scripts provided here require some libraries, which I will and describe the installation process
@@ -23,14 +22,13 @@ I've prepared some of the script to use Jupyter notebook/lab, so we will need to
 conda install -c conda-forge jupyterlab mdanalysis openmm=7.5.1
 ```
 
-Optionally, I provide a parallel version of the analysis script for processing long trajectories. For running the parallel code we need the MPI4Py.
+For some of the analysis scripts in the binding enthalpies section I implemented the code in parallel since the trajectories are large (1-$\mu$s long trajectories). Thus, a version of MPI (OpenMPI or MPIVEC) needs to be installed first and then the Python wrapper MPI4Py
 ```Python
 conda install -c conda-forge mpi4py
 ```
-With the parallel version, you will need to have openmpi installed in your Linux machine. Below is an example on running the python script in parallel 
-```bash
-mpirun -np 4 python analyze_water.py
-```
-
 
 # Manifest
+* `01-binding-free-energy/`: Contains Jupyter Notebooks and Python scripts to build, simulate and analyze an APR calculation for CB7 with 1-AdOH. 
+* `02-binding-enthalpy/`: Contains Jupyter Notebooks and Python scripts to copy initial files from APR calculations, simulate and analyze the trajectories. The analysis includes binding enthalpy, decomposition of binding enthalpy, and the change in the number of hydrogen bonds upon binding.
+* `03-heat-capacity/`: Contains Jupyter Notebooks that estimates the heat capacities from binding enthalpies.
+* `04-GIST-calculations/`: Contains bash and Python scripts that runs GIST calculations from MD simulations, and post-process the grid files to extract the heat capacities from GIST. An analysis script is also provided that integrates the heat capacities.
