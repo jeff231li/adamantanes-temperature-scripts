@@ -18,10 +18,13 @@ The water-water contribution is referenced with the bulk in order to make voxels
 
 $$C_{p,i} = \frac{\Delta E_{i}^{total}(T_2)-\Delta E_{i}^{total}(T_1)}{T_2 - T_1}$$
 
-The change in heat capacity upon binding $\Delta C_{p,b,i}$ is then obtained by subtracting the grid of the free solutes from the identically aligned bound complex
+The change in heat capacity upon binding $\Delta C_{p,i}$ is then obtained by subtracting the grid of the free solutes from the identically aligned bound complex
 
 $$\Delta C_{p,i} = C_{p,i}^{complex} - C_{p,i}^{host} - C_{p,i}^{guest}$$
 
-This folder contains three folders corresponding to the simulations and analysis for the three components above. The heat capacity for each system is estimated with the script [calculate_heat_capacity-GIST.sh](calculate_heat_capacity-GIST.sh), which uses [GISTPP](https://github.com/KurtzmanLab/Gist-Post-Processing/tree/master) to perform the GRID operations above. 
+This folder contains three folders corresponding to the simulations and analysis for the three components above. To simplify things, I calculate the reference value by estimating the average energy in each voxel for a water box simulation at two temperatures. The average $E_{bulk}^{ww}$ for 298.15 K and 328.15 K are 9.562 kcal/mol and 9.173 kcal/mol, respectively. The water densities at these two temperatures are 0.0334 $\AA^{-3}$ and 0.0320 $\AA^{-3}$, respectively.
+
+
+The heat capacity for each system is estimated with the script [calculate_heat_capacity-GIST.sh](calculate_heat_capacity-GIST.sh), which uses [GISTPP](https://github.com/KurtzmanLab/Gist-Post-Processing/tree/master) to perform the GRID operations above. 
 
 Finally, we want to integrate the heat capacity GIST voxels to get a numerical value. This is done with the script.
