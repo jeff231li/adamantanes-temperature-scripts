@@ -31,4 +31,6 @@ This folder contains three folders corresponding to the simulations and analysis
 ## Visualizing the Heat Capacity GIST Grid
 Finally, the Jupyter Notebook also includes a command to save $\Delta C_{p,i}$ to a `*.dx` file. I have prepared a  visualization state file ([gist-dCp-visual-state.vmd](gist-dCp-visual-state.vmd)), which you can load in VMD to give the image below. 
 
+<p align="center">
 <img src="cb7-amt.jpg" width="480"/>
+</p>
