@@ -22,10 +22,12 @@ I've prepared some of the script to use Jupyter notebook/lab, so we will need to
 conda install -c conda-forge jupyterlab mdanalysis openmm=7.5.1
 ```
 
-For some of the analysis scripts in the binding enthalpies section I implemented the code in parallel since the trajectories are large (1-$\mu$s long trajectories). Thus, a version of MPI (OpenMPI or MPIVEC) needs to be installed first and then the Python wrapper MPI4Py
+For some of the analysis scripts in the binding enthalpies section I implemented the code in parallel since the trajectories are large (1-$\mu$s long trajectories). Thus, a version of MPI (OpenMPI or MPIVEC) needs to be installed first on your workstation/HPC and then we need the Python wrapper MPI4Py
 ```Python
 conda install -c conda-forge mpi4py
 ```
+
+For GIST calculations, you will need the [CPPTRAJ](https://github.com/Amber-MD/cpptraj) program, which can be installed through conda (AmberTools) or compiled manually if you want to run the GPU version. The other program I used is [gisttools](https://github.com/liedllab/gisttools/tree/master), which I used to post-process the GIST output file.
 
 # Manifest
 * `01-binding-free-energy/`: Contains Jupyter Notebooks and Python scripts to build, simulate and analyze an APR calculation for CB7 with 1-AdOH. 
