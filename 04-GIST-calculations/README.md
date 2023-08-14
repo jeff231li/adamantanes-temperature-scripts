@@ -17,7 +17,7 @@ where
 
 The water-water contribution is referenced with the bulk in order to make voxels far away from the solutes have zero values. To simplify things, I calculate the reference value by estimating the average energy in each voxel for a water box simulation at two temperatures. The average $\langle E_{bulk}^{ww} \rangle$ for 298.15 K and 328.15 K are 9.562 kcal/mol and 9.173 kcal/mol, respectively. The water densities at these two temperatures are 0.0334 $\unicode{x212B}^{-3}$ and 0.0320 $\unicode{x212B}^{-3}$, respectively (which you will need to specify in the `cpptraj gist` command). The simulation and analysis scripts for neat (i.e., pure) water are available in [04-pure-water-box](04-pure-water-box). To apply the bulk reference values, we need to subtract $\langle E_{bulk}^{ww} \rangle$ from `Eww-unref-norm`, and then convert the **norm** back to a **density**:
 
-$$E_{i}^{ww}(dens) = E_{i}^{ww}(norm) \times \frac{N_{i,water}^{ww}}{V_{voxel}N_{i,frames}^{ww}}$$
+$$E_{i}^{ww}(dens) = E_{i}^{ww}(norm) \times \frac{N_{i,water}^{ww}}{V_{voxel}N_{frames}}$$
 
 To get the total energy for $E_{i}^{sw}$ and $E_{i}^{ww}$ in each voxel we multiply the density grid by the volume of the voxel (here $V_{voxel} = 0.5\times 0.5\times 0.5 = 0.125 Å^3$). 
 
