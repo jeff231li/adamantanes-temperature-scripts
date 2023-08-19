@@ -34,3 +34,4 @@ For GIST calculations, you will need the [CPPTRAJ](https://github.com/Amber-MD/c
 * `02-binding-enthalpy/`: Contains Jupyter Notebooks and Python scripts to copy initial files from APR calculations, simulate and analyze the trajectories. The analysis includes binding enthalpy, decomposition of binding enthalpy, and the change in the number of hydrogen bonds upon binding.
 * `03-heat-capacity/`: Contains Jupyter Notebooks that estimates the heat capacities from binding enthalpies.
 * `04-GIST-calculations/`: Contains bash and Python scripts that runs GIST calculations from MD simulations, and post-process the grid files to extract the heat capacities from GIST. An analysis script is also provided that integrates the heat capacities.
+* `structure-files`: Contains the structure files (PDB, MOL2, frcmod) for the CB7 and 1-AdOH molecules used for the simulation and analysis.
