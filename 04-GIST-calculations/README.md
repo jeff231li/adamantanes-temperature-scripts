@@ -19,14 +19,14 @@ The water-water contribution is referenced with the bulk in order to make voxels
 
 $$E_{i}^{ww}(dens) = E_{i}^{ww}(norm) \times \frac{N_{i,water}^{ww}}{V_{voxel}N_{frames}}$$
 
-where $N_{i,water}^{ww}/(V_{voxel}N_{frames})$ is the solvent number density. To get the total energy for $E_{i}^{sw}$ and $E_{i}^{ww}$ in each voxel we multiply the **density** grid by the volume of the voxel (here $V_{voxel} = 0.5\times 0.5\times 0.5 = 0.125\,\unicode{x212B}^{-3}$). 
+where $N_{i,water}^{ww}/(V_{voxel}N_{frames})$ is the solvent number density. To get the total energy for $E_{i}^{sw}$ and $E_{i}^{ww}$ in each voxel we multiply the **density** grid by the volume of the voxel (here $V_{voxel} = 0.5\times 0.5\times 0.5 = 0.125$ $\unicode{x212B}^{-3}$). 
 
 $$
 \begin{align}
 E_{i}^{sw}(total) &= E_{i}^{sw}(dens) \times V_{voxel}\\
-$$E_{i}^{ww}(total) &= E_{i}^{ww}(dens) \times V_{voxel}\\
-$$T\Delta S_{i}^{trans}(total) &= T\Delta S_{i}^{trans}(dens) \times V_{voxel}\\
-$$T\Delta S_{i}^{orient}(total) &= T\Delta S_{i}^{orient}(dens) \times V_{voxel}
+E_{i}^{ww}(total) &= E_{i}^{ww}(dens) \times V_{voxel}\\
+T\Delta S_{i}^{trans}(total) &= T\Delta S_{i}^{trans}(dens) \times V_{voxel}\\
+T\Delta S_{i}^{orient}(total) &= T\Delta S_{i}^{orient}(dens) \times V_{voxel}
 \end{align}
 $$
 
@@ -37,7 +37,7 @@ $$C_{p,i} = \frac{\Delta E_{i}^{total}(T_2)-\Delta E_{i}^{total}(T_1)}{T_2 - T_1
 
 For the paper, I used temperatures of 298.15 K and 328.15 K, respectively. The change in heat capacity upon binding $\Delta C_{p,i}$ is then obtained by subtracting the grid of the free solutes from the identically aligned bound complex
 
-$$\Delta C_{p,i} = C_{p,i}^{complex} - C_{p,i}^{host} - C_{p,i}^{guest}$$
+$$\Delta C_{p,b,i} = C_{p,i}^{complex} - C_{p,i}^{host} - C_{p,i}^{guest}$$
 
 This folder contains three folders corresponding to the simulations and analysis for the three components above. The heat capacity for each system is estimated with the Jupyter Notebook [Heat_Capacity_GIST.ipynb](Heat_Capacity_GIST.ipynb), which uses [gisttools](https://github.com/liedllab/gisttools) to perform the `GRID` operations. 
 
