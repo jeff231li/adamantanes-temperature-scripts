@@ -21,12 +21,14 @@ $$E_{i}^{ww}(dens) = E_{i}^{ww}(norm) \times \frac{N_{i,water}^{ww}}{V_{voxel}N_
 
 where $N_{i,water}^{ww}/(V_{voxel}N_{frames})$ is the solvent number density. To get the total energy for $E_{i}^{sw}$ and $E_{i}^{ww}$ in each voxel we multiply the **density** grid by the volume of the voxel (here $V_{voxel} = 0.5\times 0.5\times 0.5 = 0.125\,\unicode{x212B}^{-3}$). 
 
-$$\begin{align}
+$$
+\begin{align}
 E_{i}^{sw}(total) &= E_{i}^{sw}(dens) \times V_{voxel}\\
 $$E_{i}^{ww}(total) &= E_{i}^{ww}(dens) \times V_{voxel}\\
 $$T\Delta S_{i}^{trans}(total) &= T\Delta S_{i}^{trans}(dens) \times V_{voxel}\\
-$$T\Delta S_{i}^{orient}(total) &= T\Delta S_{i}^{orient}(dens) \times V_{voxel}\end{align}$$
-
+$$T\Delta S_{i}^{orient}(total) &= T\Delta S_{i}^{orient}(dens) \times V_{voxel}
+\end{align}
+$$
 
 ## Heat Capacity Grid from GIST
 The heat capacity in each voxel $C_{p,i}$ is estimated by taking the difference in energy at two temperatures divided by the difference in temperature:
