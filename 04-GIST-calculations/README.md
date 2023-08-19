@@ -25,8 +25,7 @@ $$\begin{align}
 E_{i}^{sw}(total) &= E_{i}^{sw}(dens) \times V_{voxel}\\
 $$E_{i}^{ww}(total) &= E_{i}^{ww}(dens) \times V_{voxel}\\
 $$T\Delta S_{i}^{trans}(total) &= T\Delta S_{i}^{trans}(dens) \times V_{voxel}\\
-$$T\Delta S_{i}^{orient}(total) &= T\Delta S_{i}^{orient}(dens) \times V_{voxel}\\
-\end{align}$$
+$$T\Delta S_{i}^{orient}(total) &= T\Delta S_{i}^{orient}(dens) \times V_{voxel}\end{align}$$
 
 
 ## Heat Capacity Grid from GIST
